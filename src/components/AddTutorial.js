@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import TutorialDataService from "../services/TutorialService"
+import {useNavigate} from "react-router-dom"
 
 const AddTutorial =() => {
     const initialTutorialState={
@@ -10,7 +11,7 @@ const AddTutorial =() => {
     };
     const[tutorial,setTutorial]= useState(initialTutorialState);
     const[submitted, setSubmitted]= useState(false);
-
+    let navigate=useNavigate();
     const handleInputChange =event =>{
         /* we're using spread operator as this tutorial object has 4 fields
         id,title, description and published and here we're using this to set 
@@ -48,13 +49,22 @@ const AddTutorial =() => {
         setSubmitted(false);
     };
 
+    const tutorialPage =() =>{
+        navigate("/tutorials")
+    }
+
     return(
         <div className="submit-form">
             {submitted? (
                 <div>
                     <h4>You Submitted Successfully</h4>
-                    <button className="btn btn-success" onClick={newTutorial}>
+                    {/* me-3 is to add spaces between buttons- Bootstrap-5 feature */}
+                    <button className="btn btn-success me-3" onClick={newTutorial}>
                         Add
+                    </button>
+
+                    <button className="btn btn-success" onClick={tutorialPage}>
+                        Tutorials
                     </button>
                     </div>
             ):(

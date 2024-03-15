@@ -124,8 +124,8 @@ const TutorialsList =() =>{
                                     </label>{" "}
                                     {currentTutorial.published?"Published":"Pending"}
                                     </div>
-                                    <Link to= {"/tutorials"+ currentTutorial.id}
-                                    className="badge badge-warning"
+                                    <Link to= {"/tutorials/"+ currentTutorial.id}
+                                    className="btn btn-outline-secondary"
                                     >Edit</Link>
                                     </div>
                 ):(
