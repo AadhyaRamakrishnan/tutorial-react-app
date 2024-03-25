@@ -58,7 +58,8 @@ const AddTutorial =() => {
             {submitted? (
                 <div>
                     <h4>You Submitted Successfully</h4>
-                    {/* me-3 is to add spaces between buttons- Bootstrap-5 feature */}
+                    {/* me-3 is to add spaces between buttons- Bootstrap-5 feature
+                     */}
                     <button className="btn btn-success me-3" onClick={newTutorial}>
                         Add
                     </button>
